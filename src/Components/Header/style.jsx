@@ -16,21 +16,23 @@ export const ContainerHeader = styled.header`
     display:${display.caixa};
     justify-content:${display.justifyAround};
     align-items:${display.align};
-    border:solid;
+    height:12vh;
 
 `
 export const BoxLogo = styled.figure`
     width:25%;
+    
 
     img{
-        padding:2%;
+        width:20%;
+        margin-top:1.5%
     }
 `
 
 export const ContainerMenu = styled.nav`
-    width:30%;
-    font-family: 'Poppins', sans-serif;
+    width:90%;
     font-weight:400;
+
 
 ul{
     display:${display.caixa};
@@ -39,7 +41,8 @@ ul{
 }
 
 li{
-    width:20%;
+    font-size:12px;
+    width:25%;
     text-align:center;
     cursor:pointer;
 }
@@ -51,7 +54,7 @@ export const BoxMode = styled.figure`
     border-radius:50%;
     width:10%;
     height:6vh;
-    background-color:${props => props.color};
+    background-color:${props => props.color === false ? "#fffafa" : '#303030'};
 
     img{
         width:50%;
