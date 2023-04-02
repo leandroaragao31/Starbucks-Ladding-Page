@@ -20,29 +20,26 @@ export const ContainerHeader = styled.header`
 
 `
 export const BoxLogo = styled.figure`
-    width:25%;
-    
+    width:35%;
 
     img{
-        width:20%;
+        width:15%;
         margin-top:1.5%
     }
 `
 
 export const ContainerMenu = styled.nav`
     width:90%;
-    font-weight:400;
+    font-weight:600;
 
 
 ul{
     display:${display.caixa};
-    justify-content:${display.justifyMax};
+    justify-content:${display.justifySame};
     align-items:${display.align}
 }
 
 li{
-    font-size:12px;
-    width:25%;
     text-align:center;
     cursor:pointer;
 }

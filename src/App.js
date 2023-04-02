@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Components/Footer/Footer';
 import Global from './Components/Global/globalstyles';
 import Header from './Components/Header/header';
 import Main from './Components/Main/main';
@@ -8,6 +9,7 @@ const App = () => {
         <div>
             <Header />
             <Main />
+            <Footer />
             <Global />
         </div>
     );

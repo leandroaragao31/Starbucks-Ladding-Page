@@ -11,6 +11,8 @@ import { createGlobalStyle } from "styled-components";
     list-style:none;
     font-family: 'Poppins', sans-serif;
   }
+
+
 `;
 
 export default Global;

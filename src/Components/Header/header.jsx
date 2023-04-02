@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useTransition } from 'react';
 import Logo from '../../Assets/logo.png'
 import Moon from '../../Assets/moon-regular.svg'
 import Sun from '../../Assets/sun-regular.svg'
@@ -18,16 +18,18 @@ const secudaryColor = {
 
 const Header = () => {
     const [open, setOpen] = useState(false)
-    const backRef = useRef(null)
+    const [isPending, startTransition] = useTransition();
 
     useEffect(() => {
-        if (open === false) {
-            document.body.style.backgroundColor = `${secudaryColor.background}`
-            document.body.style.color = `${secudaryColor.color}`
-        } else {
-            document.body.style.backgroundColor = `${primaryColor.background}`
-            document.body.style.color = `${primaryColor.color}`
-        }
+        startTransition(()=>{
+            if (open === false) {
+                document.body.style.backgroundColor = `${secudaryColor.background}`
+                document.body.style.color = `${secudaryColor.color}`
+            } else {
+                document.body.style.backgroundColor = `${primaryColor.background}`
+                document.body.style.color = `${primaryColor.color}`
+            } 
+        })
     }, [open])
 
 
@@ -35,6 +37,7 @@ const Header = () => {
 
     return (
         <S.ContainerHeader>
+            <Global />
             <S.BoxLogo>
                 <img src={Logo} alt='logo starbucks' />
             </S.BoxLogo>
